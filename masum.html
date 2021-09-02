@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            display: grid;
+            place-content: center;
+            height: 100vh;
+        }
+        .container{
+            width:65vw;
+            height:45vh;
+            background: rgb(21, 24, 36);
+            display: flex;
+            padding: 1rem;
+            align-items: flex-end;
+        }
+        .btn_group
+        {
+            margin: 4rem auto;
+display: flex;
+gap:10vw;
+        }
+        button{
+            padding: .5em 1.5em;
+            outline: none;
+            border: none;
+            color:white;
+            cursor: pointer;
+
+        }
+        button:hover{
+            opacity: .8;
+        }
+        .start{
+background: rgb(0, 128, 96);
+
+        }
+        .stop
+        {
+            background: rgb(253, 6, 59);
+
+        }
+      
+        .box
+        {
+flex:1 1 20%;
+
+        }
+        .box_1
+        {
+height:100%;
+background: #7953B7;
+animation: grow_1 10s infinite cubic-bezier(0.175, 0.885, 0.32, 1) both;
+animation-play-state: paused;
+        }
+        .box_2
+        {
+height:100%;
+background: #D256A5;
+animation: grow_2 10s infinite cubic-bezier(0.375, 0.485, 0.42, 1) both;
+animation-play-state: paused;
+        }
+        .box_3
+        {
+height:100%;
+background: #F26285;
+animation: grow_3 10s infinite cubic-bezier(0.375, 0.25, 0.40, 1) both;
+animation-play-state: paused;
+        }
+        .box_4
+        {
+height:100%;
+background: #F68968;
+animation: grow_4 10s infinite cubic-bezier(0.475, 0.185, 0.82, 1) both;
+animation-play-state: paused;
+        }
+        .box_5
+        {
+height:100%;
+background: #FDBF5B;
+animation: grow_5 10s infinite cubic-bezier(0.775, 0.485, 0.5, 1) both;
+animation-play-state: paused;
+        }
+        @keyframes grow_1 {
+            10%{
+               height: 10%;
+            }
+            20%{
+               height: 30%;
+            }
+            40%{
+               height: 40%;
+            }
+            60%{
+               height: 80%;
+            }
+            80%{
+               height: 70%;
+            }
+            100%{
+               height: 100%;
+            }
+        }
+        @keyframes grow_2 {
+            10%{
+               height: 15%;
+            }
+            20%{
+               height: 30%;
+            }
+            40%{
+               height: 60%;
+            }
+            60%{
+               height: 50%;
+            }
+            80%{
+               height: 90%;
+            }
+            100%{
+               height: 100%;
+            }
+        }
+        @keyframes grow_3 {
+            10%{
+               height: 60%;
+            }
+            20%{
+               height: 90%;
+            }
+            40%{
+               height: 40%;
+            }
+            60%{
+               height: 70%;
+            }
+            80%{
+               height: 30%;
+            }
+            100%{
+               height: 90%;
+            }
+        }
+        @keyframes grow_4 {
+            10%{
+               height: 20%;
+            }
+            20%{
+               height: 30%;
+            }
+            40%{
+               height: 40%;
+            }
+            60%{
+               height: 20%;
+            }
+            80%{
+               height: 80%;
+            }
+            100%{
+               height: 50%;
+            }
+        }
+        @keyframes grow_5 {
+            10%{
+               height: 50%;
+            }
+            20%{
+               height: 10%;
+            }
+            40%{
+               height: 30%;
+            }
+            60%{
+               height: 60%;
+            }
+            80%{
+               height: 80%;
+            }
+            100%{
+               height: 70%;
+            }
+        }
+    </style>
+        <title>Box Animation</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box_1 box"></div>
+        <div class="box_2 box"></div>
+        <div class="box_3 box"></div>
+        <div class="box_4 box"></div>
+        <div class="box_5 box"></div>
+    </div>
+    <div class="btn_group">
+    <button class="start">Start</button>
+    <button class="stop">Stop</button>
+</div>
+<script>
+    const box_1 = document.querySelector('.box_1')
+    const box_2 = document.querySelector('.box_2')
+    const box_3 = document.querySelector('.box_3')
+    const box_4 = document.querySelector('.box_4')
+    const box_5 = document.querySelector('.box_5')
+    const start = document.querySelector('.start')
+    const stop = document.querySelector('.stop')
+
+    
+
+    start.addEventListener('click',()=>{
+    box_1.style.animationPlayState = "running";
+    box_2.style.animationPlayState = "running";
+    box_3.style.animationPlayState = "running";
+    box_4.style.animationPlayState = "running";
+    box_5.style.animationPlayState = "running"; 
+    })
+
+    stop.addEventListener('click',()=>{
+    box_1.style.animationPlayState = "paused";
+    box_2.style.animationPlayState = "paused";
+    box_3.style.animationPlayState = "paused";
+    box_4.style.animationPlayState = "paused";
+    box_5.style.animationPlayState = "paused";
+    })
+
+
+
+</script>
+
+</body>
+</html>
